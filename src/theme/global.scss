@@ -1,0 +1,123 @@
+/* Set box sizing and reset margin/padding on all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background and dimensions for body */
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  background: linear-gradient( #badeda, #fabab8);
+}
+
+/* Center container and clip overflow */
+.container {
+  width: 300px;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+/* Set styles for animation element */
+.animation {
+  width: 300px;
+  height: 400px;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  /* Set styles for animation inner element */
+  &-inner {
+    width: 100%;
+  }
+}
+
+/* Set styles for timer input */
+#timer-input {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  text-align: center;
+
+  /* Center placeholder text */
+  ::placeholder {
+    text-align: center;
+  }
+}
+
+/* Remove up/down arrows from number input in webkit browsers */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove up/down arrows from number input in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Set styles for start button */
+.start-button {
+  width: 70%;
+  margin-right: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Set styles for stop button */
+.stop-button {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Set styles for button group */
+.buttons-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Set styles for button inside button group */
+  button {
+    height: 40px;
+  }
+}
+
+/* Set styles for countdown input */
+.countdown-input {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+}
+
+/* Set styles for countdown display */
+.countdown {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Set width for small icon */
+.w-14 {
+  width: 14px;
+}
+
+/* Center content horizontally and vertically */
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

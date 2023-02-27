@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CountDownAnimation from './view/components/CountDownAnimation/CountDownAnimation';
 
+import { progressRenderer } from './helpers/progressRenderer.helper';
+import { ANIMATION_COLOR } from './constants/constants';
+import Countdown from './view/components/TimeSection/CountDown';
+
+import './theme/global.scss';
+
+/**
+ * The root component of the application.
+ *
+ * @returns {JSX.Element} The JSX element representing the application.
+ */
 function App() {
+  const [duration, setDuration] = useState(0);
+  const [remainingTime, setRemainingTime] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <CountDownAnimation
+        progress={progressRenderer(remainingTime, duration)}
+        bgColor={ANIMATION_COLOR}
+      />
+      <Countdown
+        duration={duration}
+        setDuration={setDuration}
+        remainingTime={remainingTime}
+        setRemainingTime={setRemainingTime}
+      />
     </div>
   );
 }
